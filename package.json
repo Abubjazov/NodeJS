@@ -1,0 +1,31 @@
+{
+  "name": "njs-base",
+  "version": "0.0.1",
+  "description": "nodejs basic course",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abubjazov/NodeJS.git"
+  },
+  "keywords": [
+    "node",
+    "js",
+    "nodejs",
+    "javascript"
+  ],
+  "author": "Radik Abubyazov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Abubjazov/NodeJS/issues"
+  },
+  "homepage": "https://github.com/Abubjazov/NodeJS#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
