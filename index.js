@@ -1,5 +1,6 @@
 const express = require('express'),
       bodyParser = require('body-parser'),
+      weatherRequest = require('./requests/weather.req'),
       app = express()
 
 app.set('view engine', 'ejs')
@@ -7,14 +8,15 @@ app.use(express.static('public'))
 app.use(bodyParser.urlencoded({extended: true}))
 
 app.get('/', (request, response) => {
-    response.render('index')
+    response.render('index', {weather: null, error: null})
 })
 
-app.post('/', (request, response) => {
-    const { city } = request.body
+app.post('/', async (request, response) => {
+    const { city } = request.body,
+          {weather, error} = await weatherRequest(city)
 
-    console.log(city)
-    response.render('index')
+    
+    response.render('index', {weather, error})
 })
 
 app.listen(3000, () => {
